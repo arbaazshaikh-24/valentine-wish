@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Mishi ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ff5f9e, #ff85b3);
+      overflow: hidden;
+      color: white;
+      text-align: center;
+    }
+    .container {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 15px;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    button {
+      padding: 12px 22px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 25px;
+      margin-top: 15px;
+      background: #ff1e6e;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    button:hover {
+      background: #ff004f;
+    }
+    .message {
+      display: none;
+      margin-top: 20px;
+      animation: fadeIn 2.5s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff0033;
+      transform: rotate(45deg);
+      animation: float 7s linear infinite;
+      opacity: 0.7;
+    }
+    .heart::before, .heart::after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: #ff0033;
+      border-radius: 50%;
+      position: absolute;
+    }
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { left: -10px; top: 0; }
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(45deg); }
+      100% { transform: translateY(-10vh) rotate(45deg); }
+    }
+  </style>
+</head>
+<body>
+  <audio id="bgMusic" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7b5c3f8d4c.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <h1>💖 Happy Valentine’s Day 💖</h1>
+    <button onclick="openSurprise()">Open Your Surprise 💝</button>
+
+    <div class="message" id="message">
+      <h2>Dear Mishi ❤️</h2>
+      <p>
+        Every moment with you feels like a beautiful dream come true.
+        Your smile lights up my world, and your love gives my life meaning.
+        I’m grateful for you today, tomorrow, and always. 💕
+        <br /><br />
+        Will you be my Valentine, forever and always? 🌹
+        <br /><br />
+        With all my love,<br />
+        <strong>Arbaaz</strong>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function openSurprise() {
+      document.getElementById('message').style.display = 'block';
+      document.getElementById('bgMusic').play();
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 5 + Math.random() * 5 + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 10000);
+    }
+
+    setInterval(createHeart, 350);
+  </script>
+</body>
+</html>
