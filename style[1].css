@@ -1,0 +1,6 @@
+
+body{margin:0;height:100vh;background:pink;color:white;font-family:Arial;text-align:center}
+.content{padding-top:25vh}
+h1{font-size:3em}
+p{font-size:1.6em;font-weight:bold}
+a{display:inline-block;margin-top:20px;padding:12px 30px;background:#ff4d6d;color:white;text-decoration:none;border-radius:30px}
